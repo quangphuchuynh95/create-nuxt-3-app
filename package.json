@@ -1,23 +1,27 @@
 {
   "private": true,
   "scripts": {
-    "type-check": "../node_modules/.bin/nuxi typecheck && echo \\\"\\\\033[0;32mTypescript checked OK\\\\033[0m\\\"",
-    "type-check:watch": "../node_modules/.bin/onchange '**/*.(ts|vue)' --exclude-path .gitignore -i -- yarn type-check",
-    "lint": "../node_modules/.bin/eslint --cache '**/*.vue' '**/*.ts' && echo \\\"\\\\033[0;32mESLint checked OK\\\\033[0m\\\"",
-    "lint:watch": "../node_modules/.bin/onchange '**/*.(ts|vue)' '.eslintrc.js' --exclude-path .gitignore -i -- yarn lint",
-    "dev": "../node_modules/.bin/nuxi dev",
-    "dev:all": "../node_modules/.bin/npm-run-all --parallel dev type-check:watch",
-    "build": "../node_modules/.bin/nuxi build",
+    "type-check": "nuxi typecheck && echo \"\\033[0;32mTypescript checked OK\\033[0m\"",
+    "type-check:watch": "onchange '**/*.(ts|vue)' --exclude-path .gitignore -i -- yarn type-check",
+    "lint": "eslint --cache '**/*.vue' '**/*.ts' && echo \"\\033[0;32mESLint checked OK\\033[0m\"",
+    "lint:watch": "onchange '**/*.(ts|vue)' '.eslintrc.js' --exclude-path .gitignore -i -- yarn lint",
+    "dev": "nuxi dev",
+    "build": "nuxi build",
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "npm-run-all": "^4.1.5",
-    "eslint": "^8.3.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "@vue/eslint-config-airbnb": "^6.0.0",
+    "@vue/eslint-config-typescript": "^9.1.0",
+    "eslint": "^8.0.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-nuxt": "^3.1.0",
-    "eslint-plugin-vue": "^8.1.1",
+    "eslint-plugin-vue": "^8.0.1",
     "eslint-plugin-vuejs-accessibility": "^1.1.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^4.3.5",
     "onchange": "^7.1.0"
   },
   "dependencies": {

@@ -1,0 +1,32 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:vue/vue3-strongly-recommended",
+    "@vue/typescript/recommended",
+    "@vue/airbnb"
+  ],
+  "rules": {
+    "semi": "off",
+    "import/extensions": ["error", "always", {
+      "js": "never",
+      "mjs": "never",
+      "jsx": "never",
+      "ts": "never",
+      "tsx": "never"
+    }],
+    "vuejs-accessibility/no-onchange": "off",
+    "no-param-reassign": ["error", {
+      "props": true,
+      "ignorePropertyModificationsFor": [
+        "state", // for vuex state
+        "acc", // for reduce accumulators
+        "e" // for e.returnvalue
+      ]
+    }]
+  }
+}
